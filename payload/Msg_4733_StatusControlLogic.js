@@ -42,8 +42,8 @@ const status = new Parser()
     .bit1('isCoolOnState')              // boolean index 15 - bit0
     .bit1('isCoolOnCalc')               // boolean index 15 - bit1
     .bit1('isCoolTransition')           // boolean index 15 - bit2
-    .bit1('hasCoolAmbientHi ')          // boolean index 15 - bit3
-    .bit1('hasCoolCellTempHi ')         // boolean index 15 - bit4
+    .bit1('hasCoolAmbientHi')          // boolean index 15 - bit3
+    .bit1('hasCoolCellTempHi')         // boolean index 15 - bit4
     .bit1('hasAmbientTriggeredHeat')    // boolean index 15 - bit5
     .bit1('hasCellTempTriggeredHeat')   // boolean index 15 - bit6
     .bit1('reserved4')                  // boolean index 15 - bit7
@@ -68,19 +68,19 @@ const status = new Parser()
     .bit1('hasChargeShuntVoltPause')    // boolean index 19 - bit5
     .bit1('hasChargeShuntVoltLimPower') // boolean index 19 - bit6
     .bit1('hasFluidFlowActive')         // boolean index 19 - bit7
-    .bit1('hasChargeShuntSocHi ')       // boolean index 20 - bit0
-    .bit1('hasChargeShuntSocPause ')    // boolean index 20 - bit1
-    .bit1('hasChargeAboveInitalBypass ')// boolean index 20 - bit2
-    .bit1('hasChargeAboveFinalBypass ') // boolean index 20 - bit3
-    .bit1('hasChargeInBypass ')         // boolean index 20 - bit4
-    .bit1('hasChargeBypassComplete ')   // boolean index 20 - bit5
-    .bit1('hasChargeBypassTempRelief ') // boolean index 20 - bit6
-    .bit1('hasChargeBypassSessionLo ')  // boolean index 20 - bit7
+    .bit1('hasChargeShuntSocHi')       // boolean index 20 - bit0
+    .bit1('hasChargeShuntSocPause')    // boolean index 20 - bit1
+    .bit1('hasChargeAboveInitalBypass')// boolean index 20 - bit2
+    .bit1('hasChargeAboveFinalBypass') // boolean index 20 - bit3
+    .bit1('hasChargeInBypass')         // boolean index 20 - bit4
+    .bit1('hasChargeBypassComplete')   // boolean index 20 - bit5
+    .bit1('hasChargeBypassTempRelief') // boolean index 20 - bit6
+    .bit1('hasChargeBypassSessionLo')  // boolean index 20 - bit7
     .uint8('isChargePowerRateAlt')      /* Choices ChargeRateStates */
     .bit1('RebalanceBypassExtra')       // boolean index 22 - bit0
     .bit7('reserved5')
     .skip(1)    
-    .uint8('isDischgPowerRateState ')   /* Choices DischgRateStates
+    .uint8('isDischgPowerRateState')   /* Choices DischgRateStates
             Off             = 0,
             Limited Power   = 2,
             Normal Power    = 4, */
