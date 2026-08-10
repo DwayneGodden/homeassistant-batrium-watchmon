@@ -1,0 +1,24 @@
+name: "Batrium WatchMon UDP Listener"
+description: "Listens to UDP binary streams from Batrium WatchMon and sends them to MQTT or InfluxDB."
+version: "1.0.1"
+slug: "watchmon_udp"
+
+startup: services
+init: false
+
+arch:
+  - aarch64
+
+host_network: true
+
+ingress: true
+ingress_port: 8099
+ingress_stream: true
+panel_icon: mdi:battery-heart-variant
+panel_title: WatchMon UDP
+
+map:
+  - addon_config:rw
+
+options: {}
+schema: {}
