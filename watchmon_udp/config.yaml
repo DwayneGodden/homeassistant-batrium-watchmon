@@ -1,6 +1,6 @@
 name: "Batrium WatchMon UDP Listener"
 description: "Listens to UDP binary streams from Batrium WatchMon and sends them to MQTT or InfluxDB."
-version: "1.0.1"
+version: "1.0.2"
 slug: "watchmon_udp"
 
 startup: services
