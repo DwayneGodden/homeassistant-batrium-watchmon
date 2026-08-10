@@ -1,5 +1,15 @@
 # Batrium WatchMon UDP Listener for Home Assistant
 
+[![GitHub release](https://img.shields.io/github/v/release/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](httpsGodden/homeassistant-batrium-watchmon/releases)
+
+[![License](https://img.shields.io/github/license/DwayneGoddennt-batrium-watchmon?style=for-the-badge](LICENSE)
+
+[![GitHub stars](https://img.shields.io/github/stars/DwayneGodden/homeassistant-batriumor-the-badge](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/stargazers)
+
+[![GitHub forks](https://img.shields.io/github/forks/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](httpsneGodden/homeassistant-batrium-watchmon/network/members)
+
+[![GitHub downloads](https://img.shields.io/github/downloads/DwayneGodden/homeassistantal?style=for-the-badge](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/releases)
+
 A Home Assistant App/Add-on wrapper for the Batrium WatchMon UDP Listener.
 
 Repository: https://github.com/DwayneGodden/homeassistant-batrium-watchmon
