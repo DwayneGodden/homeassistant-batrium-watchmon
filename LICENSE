@@ -24,14 +24,7 @@ Additional Notice
 -----------------
 
 This project packages and extends the original Batrium WatchMon UDP Listener:
-
 https://github.com/Batrium/WatchMonUdpListener
 
-The original Batrium WatchMon UDP Listener is listed as MIT licensed in its
-package metadata. Any original Batrium files, source code, protocol handlers,
-payload parsers, documentation or other upstream materials remain subject to
-their original copyright and license terms.
-
-Additional Home Assistant app/add-on packaging, persistent configuration
-handling, host-network deployment support and Ingress web UI are provided by
-Dwayne Godden.
+Any original upstream Batrium files remain subject to their original copyright
+and license terms.

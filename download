@@ -1,0 +1,7 @@
+*.bak
+*.backup
+config.json
+config-runtime-backup.json
+node_modules/
+npm-debug.log*
+.DS_Store
