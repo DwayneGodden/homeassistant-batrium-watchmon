@@ -1,0 +1,909 @@
+# Configuration example for Home Assistant
+# Use MQTT expolrer to get the ID number for you init and change "Batrium/<YOUR ID> all the lines below"
+# I.e  Batrium/6041/3233
+# And add 
+# mqtt: !include MQTT.yaml
+# to you Home assistant configuration.yaml
+# This enable support two Batrium controllers so most people will onlt need 1/2 of this file.
+
+  - sensor:
+      name: "Batrium Min Cell Volt"
+      state_topic: "Batrium/6041/3233"
+      value_template: "{{ value_json.MinCellVolt }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Max Cell Volt"
+      state_topic: "Batrium/6041/3233"
+      value_template: "{{ value_json.MaxCellVolt }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Temp"
+      state_topic: "Batrium/6041/3233"
+      value_template: "{{ value_json.MinCellTemp }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+      state_class: measurement
+  - sensor:
+      name: "Batrium Max Cell Temp"
+      state_topic: "Batrium/6041/3233"
+      value_template: "{{ value_json.MaxCellTemp }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shunt Voltage"
+      state_topic: "Batrium/6041/3233"
+      value_template: "{{ value_json.ShuntVoltage }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shunt Current"
+      state_topic: "Batrium/6041/3233"
+      value_template: "{{ value_json.ShuntCurrent | round (2) }}"
+      unit_of_measurement: "A"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shunt Power VA "
+      state_topic: "Batrium/6041/3233"
+      value_template: "{{ (value_json.ShuntPowerVA | float * 1000) | round (2) }}"
+      unit_of_measurement: "W"
+      device_class: power
+      state_class: measurement
+  - sensor:
+      name: "Batrium SOC"
+      state_topic: "Batrium/6041/3233"
+      value_template: "{{ value_json.ShuntSOC }}"
+      unit_of_measurement: "%"
+      device_class: battery
+      state_class: measurement
+  - sensor:
+      name: "Batrium Ambient Temp"
+      state_topic: "Batrium/6041/3f34"
+      value_template: "{{ value_json.AmbientTemp }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+      state_class: measurement
+  - sensor:
+      name: "Batrium Capacity To Empty"
+      state_topic: "Batrium/6041/3f34"
+      value_template: "{{ value_json.NomCapacityToEmpty | round (2) }}"
+      unit_of_measurement: "Ah"
+      state_class: measurement
+  - sensor:
+      name: "Batrium Duration To Full mins"
+      state_topic: "Batrium/6041/3f34"
+      value_template: "{{ value_json.EstDurationToFullmins }}"
+      unit_of_measurement: "min"
+      state_class: measurement
+  - sensor:
+      name: "Batrium Duration To Empty mins"
+      state_topic: "Batrium/6041/3f34"
+      value_template: "{{ value_json.EstDurationToEmptymins }}"
+      unit_of_measurement: "min"
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 1"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[0].ID == 1 %}
+                {{ value_json.nodes[0].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 17"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[0].ID == 17 %}
+                {{ value_json.nodes[0].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement     
+  - sensor:
+      name: "Batrium Min Cell Volt 2"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[1].ID == 2 %}
+                {{ value_json.nodes[1].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 18"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[1].ID == 18 %}
+                {{ value_json.nodes[1].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 3"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[2].ID == 3 %}
+                {{ value_json.nodes[2].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 19"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[2].ID == 19 %}
+                {{ value_json.nodes[2].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 4"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[3].ID == 4 %}
+                {{ value_json.nodes[3].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 20"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[3].ID == 20 %}
+                {{ value_json.nodes[3].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 5"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[4].ID == 5 %}
+                {{ value_json.nodes[4].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 21"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[4].ID == 21 %}
+                {{ value_json.nodes[4].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 6"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[5].ID == 6 %}
+                {{ value_json.nodes[5].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 22"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[5].ID == 22 %}
+                {{ value_json.nodes[5].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 7"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[6].ID == 7 %}
+                {{ value_json.nodes[6].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 23"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[6].ID == 23 %}
+                {{ value_json.nodes[6].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 8"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[7].ID == 8 %}
+                {{ value_json.nodes[7].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 24"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[7].ID == 24 %}
+                {{ value_json.nodes[7].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 9"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[8].ID == 9 %}
+                {{ value_json.nodes[8].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 25"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[8].ID == 25 %}
+                {{ value_json.nodes[8].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+            
+  - sensor:
+      name: "Batrium Min Cell Volt 10"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[9].ID == 10 %}
+                {{ value_json.nodes[9].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 26"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[9].ID == 26 %}
+                {{ value_json.nodes[9].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+      
+  - sensor:
+      name: "Batrium Min Cell Volt 11"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[10].ID == 11 %}
+                {{ value_json.nodes[10].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 27"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[10].ID == 27 %}
+                {{ value_json.nodes[10].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+      
+  - sensor:
+      name: "Batrium Min Cell Volt 12"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[11].ID == 12 %}
+                {{ value_json.nodes[11].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 28"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[11].ID == 28 %}
+                {{ value_json.nodes[11].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 13"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[12].ID == 13 %}
+                {{ value_json.nodes[12].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 29"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[12].ID == 29 %}
+                {{ value_json.nodes[12].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 14"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[13].ID == 14 %}
+                {{ value_json.nodes[14].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 30"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[13].ID == 30 %}
+                {{ value_json.nodes[14].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 15"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[14].ID == 15 %}
+                {{ value_json.nodes[14].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 31"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[14].ID == 31 %}
+                {{ value_json.nodes[14].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+  - sensor:
+      name: "Batrium Min Cell Volt 16"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+         {% if value_json.nodes[15].ID == 16 %}
+             {{ value_json.nodes[15].MinCellVolt }}
+         {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Min Cell Volt 32"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+         {% if value_json.nodes.15.ID == 32 %}
+             {{ value_json.nodes[15].MinCellVolt }}
+         {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement      
+      
+      
+      
+      
+  - sensor:
+      name: "Batrium Bypass Amp 1"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[0].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 2"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[1].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 3"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[2].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 4"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[3].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 5"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[4].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 6"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[5].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 7"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[6].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 8"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[7].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 9"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[8].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 10"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[9].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 11"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[10].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 12"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[11].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 13"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[12].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 14"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[13].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 15"
+      state_topic: "Batrium/6041/415a"
+      value_template: "{{ (value_json.nodes[14].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 16"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[15].ID == 16 %}
+                 {{ (value_json.nodes[15].BypassAmp | float * 1000) | round (0) }}
+             {% endif %}
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Bypass Amp 32"
+      state_topic: "Batrium/6041/415a"
+      value_template: >
+            {% if value_json.nodes[15].ID == 32 %}
+                 {{ (value_json.nodes[15].BypassAmp | float * 1000) | round (0) }}
+            {% endif %}
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement   
+
+# Shed
+  - sensor:
+      name: "Batrium Shed Min Cell Volt"
+      state_topic: "Batrium/5130/3233"
+      value_template: "{{ value_json.MinCellVolt }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Max Cell Volt"
+      state_topic: "Batrium/5130/3233"
+      value_template: "{{ value_json.MaxCellVolt }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Temp"
+      state_topic: "Batrium/5130/3233"
+      value_template: "{{ value_json.MinCellTemp }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Max Cell Temp"
+      state_topic: "Batrium/5130/3233"
+      value_template: "{{ value_json.MaxCellTemp }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Shunt Voltage"
+      state_topic: "Batrium/5130/3233"
+      value_template: "{{ value_json.ShuntVoltage }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Shunt Current"
+      state_topic: "Batrium/5130/3233"
+      value_template: "{{ value_json.ShuntCurrent | round (2) }}"
+      unit_of_measurement: "A"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Shunt Power VA "
+      state_topic: "Batrium/5130/3233"
+      value_template: "{{ (value_json.ShuntPowerVA | float * 1000) | round (2) }}"
+      unit_of_measurement: "W"
+      device_class: power
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed SOC"
+      state_topic: "Batrium/5130/3233"
+      value_template: "{{ value_json.ShuntSOC }}"
+      unit_of_measurement: "%"
+      device_class: battery
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Ambient Temp"
+      state_topic: "Batrium/5130/3f34"
+      value_template: "{{ value_json.AmbientTemp }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Capacity To Empty"
+      state_topic: "Batrium/5130/3f34"
+      value_template: "{{ value_json.NomCapacityToEmpty | round (2) }}"
+      unit_of_measurement: "Ah"
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Duration To Full mins"
+      state_topic: "Batrium/5130/3f34"
+      value_template: "{{ value_json.EstDurationToFullmins }}"
+      unit_of_measurement: "min"
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Duration To Empty mins"
+      state_topic: "Batrium/5130/3f34"
+      value_template: "{{ value_json.EstDurationToEmptymins }}"
+      unit_of_measurement: "min"
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 1"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[0].ID == 1 %}
+                {{ value_json.nodes[0].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 2"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[1].ID == 2 %}
+                {{ value_json.nodes[1].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 3"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[2].ID == 3 %}
+                {{ value_json.nodes[2].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 4"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[3].ID == 4 %}
+                {{ value_json.nodes[3].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 5"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[4].ID == 5 %}
+                {{ value_json.nodes[4].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 6"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[5].ID == 6 %}
+                {{ value_json.nodes[5].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 7"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[6].ID == 7 %}
+                {{ value_json.nodes[6].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 8"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[7].ID == 8 %}
+                {{ value_json.nodes[7].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 9"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[8].ID == 9 %}
+                {{ value_json.nodes[8].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 10"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[9].ID == 10 %}
+                {{ value_json.nodes[9].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 11"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[10].ID == 11 %}
+                {{ value_json.nodes[10].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 12"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[11].ID == 12 %}
+                {{ value_json.nodes[11].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 13"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[12].ID == 13 %}
+                {{ value_json.nodes[12].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 14"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[13].ID == 14 %}
+                {{ value_json.nodes[14].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 15"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[14].ID == 15 %}
+                {{ value_json.nodes[14].MinCellVolt }}
+            {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Min Cell Volt 16"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+         {% if value_json.nodes[15].ID == 16 %}
+             {{ value_json.nodes[15].MinCellVolt }}
+         {% endif %}
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+
+      
+  - sensor:
+      name: "Batrium Shed Bypass Amp 1"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[0].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 2"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[1].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 3"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[2].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 4"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[3].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 5"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[4].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 6"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[5].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 7"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[6].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 8"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[7].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 9"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[8].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 10"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[9].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 11"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[10].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 12"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[11].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 13"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[12].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 14"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[13].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 15"
+      state_topic: "Batrium/5130/415a"
+      value_template: "{{ (value_json.nodes[14].BypassAmp | float * 1000) | round (0) }}"
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+  - sensor:
+      name: "Batrium Shed Bypass Amp 16"
+      state_topic: "Batrium/5130/415a"
+      value_template: >
+            {% if value_json.nodes[15].ID == 16 %}
+                 {{ (value_json.nodes[15].BypassAmp | float * 1000) | round (0) }}
+             {% endif %}
+      unit_of_measurement: "mA"
+      device_class: current
+      state_class: measurement
+
+
+      
+      
+      
+      
+      
+      
