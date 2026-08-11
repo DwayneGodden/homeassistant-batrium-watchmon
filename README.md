@@ -1,10 +1,12 @@
 # Batrium WatchMon UDP Listener for Home Assistant
 
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Compatible-41BDF5?style=for-the-badge&logo=homeassistant)](https://www.home-assistant.io/)
+[![ARM64 Only](https://img.shields.io/badge/ARM64-Only-orange?style=for-the-badge&logo=arm)](https://developer.arm.com/)
 [![GitHub Release](https://img.shields.io/github/v/release/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/releases)
 [![GitHub License](https://img.shields.io/github/license/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/stargazers)
 [![GitHub Downloads](https://img.shields.io/github/downloads/DwayneGodden/homeassistant-batrium-watchmon/total?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/releases)
+
 
 Home Assistant app for receiving Batrium WatchMon UDP broadcasts and publishing data to MQTT and/or InfluxDB, featuring a built-in Home Assistant configuration editor.
 
@@ -29,6 +31,13 @@ Repository: https://github.com/DwayneGodden/homeassistant-batrium-watchmon
 2. Go to **Settings**.
 3. Go to **Apps** or **Add-ons**, depending on your Home Assistant version.
 4. Add this repository URL:
+
+```markdown
+> ⚠️ This release currently supports AArch64 / ARM64 Home Assistant installations only.
+>
+> Tested on Home Assistant OS running on Raspberry Pi and other ARM64-based platforms.
+```
+
 
 ```text
 https://github.com/DwayneGodden/homeassistant-batrium-watchmon
