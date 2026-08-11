@@ -1,16 +1,12 @@
 # Batrium WatchMon UDP Listener for Home Assistant
 
-[![GitHub release](https://img.shields.io/github/v/release/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](httpsGodden/homeassistant-batrium-watchmon/releases)
+[![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Compatible-41BDF5?style=for-the-badge&logo=homeassistant)](https://www.home-assistant.io/)
+[![GitHub Release](https://img.shields.io/github/v/release/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/releases)
+[![GitHub License](https://img.shields.io/github/license/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/stargazers)
+[![GitHub Downloads](https://img.shields.io/github/downloads/DwayneGodden/homeassistant-batrium-watchmon/total?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/releases)
 
-[![License](https://img.shields.io/github/license/DwayneGoddennt-batrium-watchmon?style=for-the-badge](LICENSE)
-
-[![GitHub stars](https://img.shields.io/github/stars/DwayneGodden/homeassistant-batriumor-the-badge](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/stargazers)
-
-[![GitHub forks](https://img.shields.io/github/forks/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](httpsneGodden/homeassistant-batrium-watchmon/network/members)
-
-[![GitHub downloads](https://img.shields.io/github/downloads/DwayneGodden/homeassistantal?style=for-the-badge](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/releases)
-
-A Home Assistant App/Add-on wrapper for the Batrium WatchMon UDP Listener.
+Home Assistant app for receiving Batrium WatchMon UDP broadcasts and publishing data to MQTT and/or InfluxDB, featuring a built-in Home Assistant configuration editor.
 
 Repository: https://github.com/DwayneGodden/homeassistant-batrium-watchmon
 
