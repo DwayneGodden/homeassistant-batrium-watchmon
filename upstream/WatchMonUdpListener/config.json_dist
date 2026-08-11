@@ -1,0 +1,70 @@
+{
+	"config" : {
+		"mqtthost" : "localhost",
+		"mqttusername" : "mqtt",
+		"mqttpassword" : "mqtt",
+		"influxhost" : "localhost",
+		"influxdatabase" : "batrium",
+                "influxusername" : "",
+                "influxpassword" : "",
+		"influxenabled"  : true,
+		"mqttenabled"    : true,
+		"debug" : false,
+		"debugmqtt" : false
+	},
+	"3e" : {
+		"mqtt" : true,
+		"influx" : true,
+		"tag" : "general",
+		"serie" : "generic"
+	},
+	"32" : {
+		"mqtt" : true,
+		"influx" : true,
+		"tag" : "general",
+		"serie" : "generic"
+	},
+	"78" : {
+		"mqtt" : false,
+		"influx" : false, 
+		"info" : "Dont use influx on message 7857",
+		"tag" : "general",
+		"serie" : "generic"
+	},
+	"57" : {
+		"mqtt" : false,
+		"influx" : false,
+		"tag" : "general",
+		"serie" : "generic"
+	},
+	"42" : {
+		"mqtt" : false,
+		"influx" : true,
+		"tag" : "general",
+		"serie" : "nodes",
+		"tagID" : "ID"
+	},
+	"54" : {
+		"mqtt" : false,
+		"influx" : true,
+		"tag" : "general",
+		"serie" : "daily"
+	},
+	"41" : {
+		"mqtt" : true,
+		"influx" : false,
+		"tag" : "general",
+		"serie" : "nodes2",
+		"info" : "Dont send this message to influx. its not supported. if you need the data stored in influx use MQTT and then parse it first"
+	},
+
+
+	"all" : {
+		"mqtt" : false,
+		"influx" :false,
+		"info" : "Do not run every message to influx. you will kill the machine if running raspberry pi!"
+	}
+}
+
+
+
