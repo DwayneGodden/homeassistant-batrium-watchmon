@@ -2,7 +2,7 @@ services:
   batrium-watchmon-udp:
     build:
       context: ..
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile
     image: batrium-watchmon-udp:latest
     container_name: batrium-watchmon-udp
     network_mode: host

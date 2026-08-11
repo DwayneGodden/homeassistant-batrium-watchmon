@@ -5,11 +5,9 @@ LABEL org.opencontainers.image.description="Standalone Docker image for Batrium 
 LABEL org.opencontainers.image.source="https://github.com/DwayneGodden/homeassistant-batrium-watchmon"
 LABEL org.opencontainers.image.licenses="MIT"
 
-RUN apk add --no-cache git
-
 WORKDIR /app
 
-RUN git clone https://github.com/Batrium/WatchMonUdpListener.git /app
+COPY upstream/WatchMonUdpListener/ /app/
 
 RUN npm install --omit=dev
 RUN npm install express
@@ -17,7 +15,8 @@ RUN npm install express
 RUN mkdir -p /app/config
 RUN mkdir -p /data
 
-COPY docker-entrypoint.sh /app/docker-entrypoint.sh
+COPY watchmon_udp/config-ui.js /app/config-ui.js
+COPY docker/docker-entrypoint.sh /app/docker-entrypoint.sh
 
 RUN chmod +x /app/docker-entrypoint.sh
 
