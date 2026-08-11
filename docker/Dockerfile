@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.licenses="MIT"
 
 WORKDIR /app
 
-RUN git clone --depth 1 https://github.com/Batrium/WatchMonUdpListener.git /app
+COPY upstream/WatchMonUdpListener/ /app/
 
 RUN npm install --omit=dev
 RUN npm install express
