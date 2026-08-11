@@ -4,7 +4,7 @@ RUN apk add --no-cache nodejs npm git
 
 WORKDIR /app
 
-RUN git clone https://github.com/Batrium/WatchMonUdpListener.git /app
+COPY upstream/WatchMonUdpListener/ /app/
 
 RUN npm install
 RUN npm install express
