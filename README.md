@@ -1,16 +1,18 @@
 # Batrium WatchMon UDP Listener for Home Assistant
 
-[![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Compatible-41BDF5?style=for-the-badge&logo=homeassistant)](https://www.home-assistant.io/)
-[![ARM64 Only](https://img.shields.io/badge/ARM64-Only-orange?style=for-the-badge&logo=arm)](https://developer.arm.com/)
-[![GitHub Release](https://img.shields.io/github/v/release/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/releases)
-[![GitHub License](https://img.shields.io/github/license/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/DwayneGodden/homeassistant-batrium-watchmon?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/stargazers)
-[![GitHub Downloads](https://img.shields.io/github/downloads/DwayneGodden/homeassistant-batrium-watchmon/total?style=for-the-badge)](https://github.com/DwayneGodden/homeassistant-batrium-watchmon/releases)
-
+[![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Compatible-41BDF5?style=flat-square&logo=homeassistant)](https://www.home-assistant.io/)
+[![ARM64 Only](https://img.shields.io/badge/ARM64-Only-orange?style=flat-square&logo=arm)](https://developer.arm.com/)
+[![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen?style=flat-square)](https://opensource.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 Home Assistant app for receiving Batrium WatchMon UDP broadcasts and publishing data to MQTT and/or InfluxDB, featuring a built-in Home Assistant configuration editor.
 
 Repository: https://github.com/DwayneGodden/homeassistant-batrium-watchmon
+
+```markdown
+⚠️ This add-on currently supports ARM64 / AArch64 Home Assistant installations only.
+```
+
 
 ## Features
 
@@ -18,12 +20,11 @@ Repository: https://github.com/DwayneGodden/homeassistant-batrium-watchmon
 - Uses host networking for LAN UDP broadcast visibility
 - Publishes Batrium data to MQTT
 - Supports InfluxDB output
-- Persistent `/data/config.json` configuration storage
 - Built-in Home Assistant Ingress web interface
 - Web-based full JSON config editor
 - JSON validation before saving
 - Format JSON and reload-from-disk buttons
-- ARM64/aarch64 support
+- Designed for ARM64 / AArch64 systems
 
 ## Installation
 
@@ -31,55 +32,36 @@ Repository: https://github.com/DwayneGodden/homeassistant-batrium-watchmon
 2. Go to **Settings**.
 3. Go to **Apps** or **Add-ons**, depending on your Home Assistant version.
 4. Add this repository URL:
-
-```markdown
-> ⚠️ This release currently supports AArch64 / ARM64 Home Assistant installations only.
->
-> Tested on Home Assistant OS running on Raspberry Pi and other ARM64-based platforms.
-```
-
-
 ```text
 https://github.com/DwayneGodden/homeassistant-batrium-watchmon
 ```
-
 5. Install **Batrium WatchMon UDP Listener**.
 6. Start the app.
 7. Open the web UI and edit the configuration.
 
+## Requirements
+
+- MQTT service
+- InfluxDB service, if you want InfluxDB output
+
+Both can be installed as Home Assistant add-ons and configured using your Home Assistant server LAN IP.
+
 ## Configuration
 
-Persistent config:
+On first launch, open the web UI and update:
 
-```text
-/data/config.json
-```
-
-Runtime config used by the Batrium listener:
-
-```text
-/app/config/config.json
-```
+- MQTT server IP
+- MQTT username and password
+- InfluxDB IP
+- InfluxDB username and password
+- InfluxDB database name
 
 ## Network Requirement
 
-Batrium WatchMon UDP traffic is typically broadcast traffic. This app should run with host networking enabled:
+Batrium WatchMon UDP traffic is typically broadcast traffic. For this reason, the add-on should run with host networking enabled:
 
-```yaml
 host_network: true
-```
 
-Check network mode:
-
-```bash
-docker inspect app_local_watchmon_udp | grep -A5 -B5 NetworkMode
-```
-
-Expected result:
-
-```json
-"NetworkMode": "host"
-```
 
 ## Credits
 
